@@ -8,7 +8,7 @@ class Config
     {
 
         if($path) {
-            $config = require_once 'databasecfg.php';
+            $config = require_once '../config/databasecfg.php';
             $path = explode('.', $path);
 
             foreach ($path as $item) {

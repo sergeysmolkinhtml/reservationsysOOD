@@ -8,7 +8,6 @@ final class User extends EntityCore
 {
 
     public function __construct(
-        protected Int $id,
         private String $name,
         private String $email,
         private String $password
