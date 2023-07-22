@@ -6,5 +6,23 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Config' => $baseDir . '/config/Config.php',
+    'App\\Contracts\\BaseInterface' => $baseDir . '/src/Contracts/BaseInterface.php',
+    'App\\Database\\DatabaseCore' => $baseDir . '/src/Database/DatabaseCore.php',
+    'App\\Database\\DatabaseInterface' => $baseDir . '/src/Database/DatabaseInterface.php',
+    'App\\Database\\MySQLDatabase' => $baseDir . '/src/Database/MySQLDatabase.php',
+    'App\\Entities\\Amenity' => $baseDir . '/src/Entities/Amenity.php',
+    'App\\Entities\\BookingStatus' => $baseDir . '/src/Entities/BookingStatus.php',
+    'App\\Entities\\Core\\EntityCore' => $baseDir . '/src/Entities/Core/EntityCore.php',
+    'App\\Entities\\Discount' => $baseDir . '/src/Entities/Discount.php',
+    'App\\Entities\\Hotel' => $baseDir . '/src/Entities/Hotel.php',
+    'App\\Entities\\Image' => $baseDir . '/src/Entities/Image.php',
+    'App\\Entities\\Location' => $baseDir . '/src/Entities/Location.php',
+    'App\\Entities\\PaymentGateway' => $baseDir . '/src/Entities/PaymentGateway.php',
+    'App\\Entities\\Reservation' => $baseDir . '/src/Entities/Reservation.php',
+    'App\\Entities\\Review' => $baseDir . '/src/Entities/Review.php',
+    'App\\Entities\\Room' => $baseDir . '/src/Entities/Room.php',
+    'App\\Entities\\RoomType' => $baseDir . '/src/Entities/RoomType.php',
+    'App\\Entities\\User' => $baseDir . '/src/Entities/User.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

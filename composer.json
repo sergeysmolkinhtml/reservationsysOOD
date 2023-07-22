@@ -4,7 +4,12 @@
       "App\\" : "src/"
     },
     "classmap": [
-      "src"
+      "src",
+      "config"
     ]
+  },
+
+  "require": {
+    "ext-pdo": "*"
   }
 }

@@ -21,6 +21,24 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
     );
 
     public static $classMap = array (
+        'App\\Config' => __DIR__ . '/../..' . '/config/Config.php',
+        'App\\Contracts\\BaseInterface' => __DIR__ . '/../..' . '/src/Contracts/BaseInterface.php',
+        'App\\Database\\DatabaseCore' => __DIR__ . '/../..' . '/src/Database/DatabaseCore.php',
+        'App\\Database\\DatabaseInterface' => __DIR__ . '/../..' . '/src/Database/DatabaseInterface.php',
+        'App\\Database\\MySQLDatabase' => __DIR__ . '/../..' . '/src/Database/MySQLDatabase.php',
+        'App\\Entities\\Amenity' => __DIR__ . '/../..' . '/src/Entities/Amenity.php',
+        'App\\Entities\\BookingStatus' => __DIR__ . '/../..' . '/src/Entities/BookingStatus.php',
+        'App\\Entities\\Core\\EntityCore' => __DIR__ . '/../..' . '/src/Entities/Core/EntityCore.php',
+        'App\\Entities\\Discount' => __DIR__ . '/../..' . '/src/Entities/Discount.php',
+        'App\\Entities\\Hotel' => __DIR__ . '/../..' . '/src/Entities/Hotel.php',
+        'App\\Entities\\Image' => __DIR__ . '/../..' . '/src/Entities/Image.php',
+        'App\\Entities\\Location' => __DIR__ . '/../..' . '/src/Entities/Location.php',
+        'App\\Entities\\PaymentGateway' => __DIR__ . '/../..' . '/src/Entities/PaymentGateway.php',
+        'App\\Entities\\Reservation' => __DIR__ . '/../..' . '/src/Entities/Reservation.php',
+        'App\\Entities\\Review' => __DIR__ . '/../..' . '/src/Entities/Review.php',
+        'App\\Entities\\Room' => __DIR__ . '/../..' . '/src/Entities/Room.php',
+        'App\\Entities\\RoomType' => __DIR__ . '/../..' . '/src/Entities/RoomType.php',
+        'App\\Entities\\User' => __DIR__ . '/../..' . '/src/Entities/User.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
