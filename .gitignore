@@ -1,6 +1,9 @@
 
 /vendor/
 /.idea/
+
 .idea
 
-
+.idea/.gitignore
+/.idea/php.xml
+/.idea

@@ -21,7 +21,7 @@ $container = $containerBuilder->build();
 
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/sga',['App\Http\Controllers\HotelController', 'index']);
+    $r->addRoute('GET', '/hotels',['App\Http\Controllers\HotelController', 'index']);
 });
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];
