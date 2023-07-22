@@ -1,4 +1,9 @@
 RewriteEngine On
+RewriteBase /
+
+# Пропустить существующие файлы и каталоги
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [L]
+
+# Перенаправление всех запросов на точку входа index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

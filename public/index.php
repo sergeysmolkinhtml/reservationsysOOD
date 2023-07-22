@@ -3,17 +3,25 @@
 use DI\ContainerBuilder;
 
 require_once '../vendor/autoload.php';
-
+use \League\Plates\Engine;
 $containerBuilder = new ContainerBuilder();
 
 $containerBuilder->useAutowiring(true);
 $containerBuilder->useAttributes(true);
+
+$containerBuilder->addDefinitions([
+    Engine::class => function () {
+
+        return new Engine('../src/Views/frontend');
+    },
+]);
+
 $container = $containerBuilder->build();
 
-$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/', function () {
 
-    });
+
+$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
+    $r->addRoute('GET', '/sga',['App\Http\Controllers\HotelController', 'index']);
 });
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];

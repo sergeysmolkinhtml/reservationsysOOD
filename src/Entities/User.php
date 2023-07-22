@@ -7,12 +7,14 @@ use App\Entities\Core\EntityCore;
 final class User extends EntityCore
 {
 
+    private const PRIMARY = 'id';
+
     public function __construct(
         private String $name,
         private String $email,
         private String $password
     ) {
-        parent::__construct($this->id);
+        parent::__construct();
     }
 
     /**
@@ -63,8 +65,14 @@ final class User extends EntityCore
         $this->password = $password;
     }
 
+
+
     public function __toString() : string
     {
-        return $this->name;
+        return self::class;
     }
+
+
+
+
 }

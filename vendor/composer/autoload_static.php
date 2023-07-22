@@ -18,6 +18,7 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         ),
         'L' => 
         array (
+            'League\\Plates\\' => 14,
             'Laravel\\SerializableClosure\\' => 28,
         ),
         'I' => 
@@ -42,6 +43,10 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'League\\Plates\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/plates/src',
         ),
         'Laravel\\SerializableClosure\\' => 
         array (
@@ -68,8 +73,8 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
     public static $classMap = array (
         'App\\Config' => __DIR__ . '/../..' . '/config/Config.php',
         'App\\Contracts\\BaseInterface' => __DIR__ . '/../..' . '/src/Contracts/BaseInterface.php',
+        'App\\Contracts\\DatabaseInterface' => __DIR__ . '/../..' . '/src/Contracts/DatabaseInterface.php',
         'App\\Database\\DatabaseCore' => __DIR__ . '/../..' . '/src/Database/DatabaseCore.php',
-        'App\\Database\\DatabaseInterface' => __DIR__ . '/../..' . '/src/Database/DatabaseInterface.php',
         'App\\Database\\MySQLDatabase' => __DIR__ . '/../..' . '/src/Database/MySQLDatabase.php',
         'App\\Entities\\Amenity' => __DIR__ . '/../..' . '/src/Entities/Amenity.php',
         'App\\Entities\\BookingStatus' => __DIR__ . '/../..' . '/src/Entities/BookingStatus.php',
@@ -84,6 +89,7 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'App\\Entities\\Room' => __DIR__ . '/../..' . '/src/Entities/Room.php',
         'App\\Entities\\RoomType' => __DIR__ . '/../..' . '/src/Entities/RoomType.php',
         'App\\Entities\\User' => __DIR__ . '/../..' . '/src/Entities/User.php',
+        'App\\Http\\Controllers\\HotelController' => __DIR__ . '/../..' . '/src/Http/Controllers/HotelController.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

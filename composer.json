@@ -5,13 +5,15 @@
     },
     "classmap": [
       "src",
-      "config"
+      "config",
+      "src/Views/frontend"
     ]
   },
 
   "require": {
     "ext-pdo": "*",
     "nikic/fast-route": "^1.3",
-    "php-di/php-di": "^7.0"
+    "php-di/php-di": "^7.0",
+    "league/plates": "^3.5"
   }
 }

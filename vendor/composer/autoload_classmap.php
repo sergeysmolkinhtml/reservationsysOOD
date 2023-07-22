@@ -8,8 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Config' => $baseDir . '/config/Config.php',
     'App\\Contracts\\BaseInterface' => $baseDir . '/src/Contracts/BaseInterface.php',
+    'App\\Contracts\\DatabaseInterface' => $baseDir . '/src/Contracts/DatabaseInterface.php',
     'App\\Database\\DatabaseCore' => $baseDir . '/src/Database/DatabaseCore.php',
-    'App\\Database\\DatabaseInterface' => $baseDir . '/src/Database/DatabaseInterface.php',
     'App\\Database\\MySQLDatabase' => $baseDir . '/src/Database/MySQLDatabase.php',
     'App\\Entities\\Amenity' => $baseDir . '/src/Entities/Amenity.php',
     'App\\Entities\\BookingStatus' => $baseDir . '/src/Entities/BookingStatus.php',
@@ -24,5 +24,6 @@ return array(
     'App\\Entities\\Room' => $baseDir . '/src/Entities/Room.php',
     'App\\Entities\\RoomType' => $baseDir . '/src/Entities/RoomType.php',
     'App\\Entities\\User' => $baseDir . '/src/Entities/User.php',
+    'App\\Http\\Controllers\\HotelController' => $baseDir . '/src/Http/Controllers/HotelController.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

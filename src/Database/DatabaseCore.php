@@ -2,6 +2,7 @@
 
 namespace App\Database;
 
+use App\Contracts\DatabaseInterface;
 use PDO;
 
 abstract class DatabaseCore implements DatabaseInterface
