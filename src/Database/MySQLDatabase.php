@@ -11,22 +11,17 @@ use PDOException;
 #[AllowDynamicProperties]
 final class MySQLDatabase extends DatabaseCore
 {
-    protected static ?PDO $connection;
 
-    public function __construct()
+    protected function __construct()
     {
+        parent::__construct();
         try {
-            self::$connection = new PDO('mysql:host=reserv;dbname=reservDB', 'root', '');
+            parent::$connection = new PDO('mysql:host=reserv;dbname=reservDB', 'root', '');
         } catch (PDOException $exception){
             die($exception->getMessage());
         }
-
     }
 
-    public function getConnection() : ?PDO
-    {
-        return self::$connection;
-    }
 
 
 }

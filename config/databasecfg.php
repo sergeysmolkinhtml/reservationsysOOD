@@ -5,6 +5,6 @@ return [
         'host' => 'reserv',
         'username' => 'root',
         'db_name' => 'reservDB',
-        'password' => '',
+        'password' => null,
     ]
 ];

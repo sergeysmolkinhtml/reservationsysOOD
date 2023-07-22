@@ -8,10 +8,12 @@ abstract class DatabaseCore implements DatabaseInterface
 {
     protected static ?PDO $connection = null;
 
+    protected function __construct() {}
+
     public static function getInstance() : ?PDO
     {
         if(self::$connection === null) {
-            self::$connection === new class() {}; #TODo
+            self::$connection === new static(); #TODo
         }
         return self::$connection;
     }
