@@ -2,6 +2,7 @@
 
 namespace App\Entities;
 
-final readonly class Hotel {
+final readonly class Hotel
+{
 
 }
