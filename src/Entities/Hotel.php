@@ -2,7 +2,9 @@
 
 namespace App\Entities;
 
-final readonly class Hotel
+use App\Entities\Core\EntityCore;
+
+final class Hotel extends EntityCore
 {
 
 }

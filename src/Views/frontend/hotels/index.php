@@ -8,6 +8,7 @@
     <title>Hotels</title>
 </head>
 <body>
-Hello world
+data
+<?php var_dump($data);?>
 </body>
 </html>

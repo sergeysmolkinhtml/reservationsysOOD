@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\HotelService;
 use League\Plates\Engine;
 
-final readonly class HotelController
+final class HotelController
 {
 
     public function __construct(
-        private Engine $templateEngine
+        private readonly Engine $templateEngine,
+        private readonly HotelService $hotelService
     ) {}
 
     public function index() : void
     {
-        echo $this->templateEngine->render('hotels/index');
+        $data = $this->hotelService->data;
+        echo $this->templateEngine->render('hotels/index', ['data' => $data]);
     }
 }

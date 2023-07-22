@@ -7,7 +7,7 @@ use App\Entities\Core\EntityCore;
 final class User extends EntityCore
 {
 
-    private const PRIMARY = 'id';
+    private const PRIMARY_KEY = 'id';
 
     public function __construct(
         private String $name,

@@ -1,6 +1,11 @@
 <?php
 
+use DI\Container;
+use App\Http\Controllers\HotelController;
+use App\Services\HotelService;
 use DI\ContainerBuilder;
+use App\Repositories\HotelRepository;
+use App\Repositories\Interfaces\HotelRepositoryInterface;
 
 require_once '../vendor/autoload.php';
 use \League\Plates\Engine;
@@ -11,9 +16,22 @@ $containerBuilder->useAttributes(true);
 
 $containerBuilder->addDefinitions([
     Engine::class => function () {
-
         return new Engine('../src/Views/frontend');
     },
+    HotelRepositoryInterface::class => function (Container $container) {
+        return new HotelRepository();
+    },
+    HotelService::class => function (Container $container) {
+        return new HotelService(
+            $container->get(HotelRepositoryInterface::class)
+        );
+    },
+    HotelController::class => function (Container $container) {
+        return new HotelController(
+            $container->get(Engine::class),
+            $container->get(HotelService::class)
+        );
+    }
 ]);
 
 $container = $containerBuilder->build();
