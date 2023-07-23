@@ -8,6 +8,7 @@ use DI\ContainerBuilder;
 use App\Repositories\HotelRepository;
 use App\Repositories\Interfaces\HotelRepositoryInterface;
 use \League\Plates\Engine;
+use \Aura\SqlQuery\QueryFactory;
 
 require_once '../vendor/autoload.php';
 
@@ -20,8 +21,11 @@ $containerBuilder->addDefinitions([
     Engine::class => function () {
         return new Engine('../src/Views/frontend');
     },
+    QueryFactory::class => function () {
+        return new QueryFactory('mysql');
+    },
     HotelRepositoryInterface::class => function (Container $container) {
-        return new HotelRepository();
+        return new HotelRepository($container->get(\Aura\SqlQuery\QueryFactory::class));
     },
     HotelService::class => function (Container $container) {
         return new HotelService(

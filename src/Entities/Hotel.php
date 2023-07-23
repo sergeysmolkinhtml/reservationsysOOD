@@ -2,8 +2,11 @@
 
 namespace App\Entities;
 
+use App\Database\MySQLDatabase;
 use App\Entities\Core\EntityCore;
-use SplObjectStorage;
+use Monolog\Level;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 final class Hotel extends EntityCore
 {
@@ -11,9 +14,10 @@ final class Hotel extends EntityCore
     public string $address;
     public string $rating;
 
-    private SplObjectStorage $hotelStorage;
+    public static string $configStatusNameHotelNotWorking = 'Not working';
+    public static string $configStatusNameHotelWorking = 'Working';
 
-    private const TABLE = 'hotels';
+    protected const TABLE = 'hotels';
 
     private const PRIMARY_KEY = 'id';
 
@@ -23,6 +27,11 @@ final class Hotel extends EntityCore
     public function __construct(?int $id = null)
     {
         parent::__construct($id);
+    }
+
+    public static function getUserTable() : string
+    {
+        return self::TABLE;
     }
 
     /**
@@ -72,6 +81,13 @@ final class Hotel extends EntityCore
     {
         $this->rating = $rating;
     }
+
+    public static function log() : void
+    {
+        $log = new Logger('name');
+    }
+
+
 
 
 

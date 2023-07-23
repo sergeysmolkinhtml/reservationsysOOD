@@ -4,6 +4,9 @@ namespace App;
 
 class Config
 {
+
+
+
     public static function get(string $path = null) : mixed
     {
         if($path) {

@@ -2,24 +2,35 @@
 
 namespace App\Repositories;
 
+use App\Database\MySQLDatabase;
 use App\Entities\Hotel;
 use App\Repositories\Interfaces\HotelRepositoryInterface;
+use Aura\SqlQuery\QueryFactory;
+use PDO;
 
 final class HotelRepository implements HotelRepositoryInterface
 {
-    protected Hotel $hotel;
+    private QueryFactory $queryFactory;
+    private PDO $pdo;
 
-    public function __construct()
+    public function __construct(QueryFactory $queryFactory)
     {
-        $this->hotel = new Hotel('1');
+        $this->queryFactory = $queryFactory;
+        $this->pdo = MySQLDatabase::getInstance();
     }
 
     /**
-     * @return string
+     * @param string[] $columns
+     * @return array
      */
-    public function all()
+    public function all(array $columns = array('*')) : array
     {
-        return $this->hotel->all();
+        $select = $this->queryFactory->newSelect();
+        $select->cols($columns)->from(Hotel::getUserTable());
+
+        $sth = $this->pdo->prepare($select->getStatement());
+        $sth->execute($select->getBindValues());
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**

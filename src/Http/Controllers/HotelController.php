@@ -6,12 +6,12 @@ namespace App\Http\Controllers;
 use App\Services\HotelService;
 use League\Plates\Engine;
 
-final class HotelController
+final readonly class HotelController
 {
 
     public function __construct(
-        private readonly Engine $templateEngine,
-        private readonly HotelService $hotelService
+        private Engine       $templateEngine,
+        private HotelService $hotelService
     ) {}
 
     public function index() : void

@@ -3,8 +3,6 @@
 namespace App\Services;
 
 
-
-
 use App\Repositories\Interfaces\HotelRepositoryInterface;
 
 final class HotelService extends ServiceCore
@@ -14,9 +12,10 @@ final class HotelService extends ServiceCore
         private readonly HotelRepositoryInterface $hotelRepository
     ) {}
 
-    public function indexData()
+    public function indexData() : array
     {
-        return $this->hotelRepository->all();
+        $this->data['hotels'] = $this->hotelRepository->all();
+        return $this->data;
     }
 
 }

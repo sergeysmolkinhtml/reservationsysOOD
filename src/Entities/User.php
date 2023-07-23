@@ -66,7 +66,6 @@ final class User extends EntityCore
     }
 
 
-
     public function __toString() : string
     {
         return self::class;

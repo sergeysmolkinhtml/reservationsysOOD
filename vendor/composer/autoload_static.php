@@ -14,7 +14,12 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
+        ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
         ),
         'L' => 
         array (
@@ -35,14 +40,23 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         ),
         'A' => 
         array (
+            'Aura\\SqlQuery\\' => 14,
             'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'League\\Plates\\' => 
         array (
@@ -64,6 +78,10 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         array (
             0 => __DIR__ . '/..' . '/php-di/php-di/src',
         ),
+        'Aura\\SqlQuery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aura/sqlquery/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
@@ -74,6 +92,7 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'App\\Config' => __DIR__ . '/../..' . '/config/Config.php',
         'App\\Contracts\\BaseInterface' => __DIR__ . '/../..' . '/src/Contracts/BaseInterface.php',
         'App\\Contracts\\DatabaseInterface' => __DIR__ . '/../..' . '/src/Contracts/DatabaseInterface.php',
+        'App\\DTO\\BookingDTO' => __DIR__ . '/../..' . '/src/DTO/BookingDTO.php',
         'App\\Database\\DatabaseCore' => __DIR__ . '/../..' . '/src/Database/DatabaseCore.php',
         'App\\Database\\MySQLDatabase' => __DIR__ . '/../..' . '/src/Database/MySQLDatabase.php',
         'App\\Entities\\Amenity' => __DIR__ . '/../..' . '/src/Entities/Amenity.php',
@@ -90,6 +109,13 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'App\\Entities\\RoomType' => __DIR__ . '/../..' . '/src/Entities/RoomType.php',
         'App\\Entities\\User' => __DIR__ . '/../..' . '/src/Entities/User.php',
         'App\\Http\\Controllers\\HotelController' => __DIR__ . '/../..' . '/src/Http/Controllers/HotelController.php',
+        'App\\Repositories\\HotelRepository' => __DIR__ . '/../..' . '/src/Repositories/HotelRepository.php',
+        'App\\Repositories\\Interfaces\\HotelRepositoryInterface' => __DIR__ . '/../..' . '/src/Repositories/Interfaces/HotelRepositoryInterface.php',
+        'App\\Repositories\\Interfaces\\UserRepositoryInterface' => __DIR__ . '/../..' . '/src/Repositories/Interfaces/UserRepositoryInterface.php',
+        'App\\Repositories\\UserRepository' => __DIR__ . '/../..' . '/src/Repositories/UserRepository.php',
+        'App\\Services\\HotelService' => __DIR__ . '/../..' . '/src/Services/HotelService.php',
+        'App\\Services\\ServiceCore' => __DIR__ . '/../..' . '/src/Services/ServiceCore.php',
+        'App\\Services\\UserService' => __DIR__ . '/../..' . '/src/Services/UserService.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

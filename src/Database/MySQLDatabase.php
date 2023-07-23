@@ -15,7 +15,7 @@ final class MySQLDatabase extends DatabaseCore
         parent::__construct();
         try {
             parent::$connection = new PDO('mysql:host=reserv;dbname=reservDB',
-                Config::get('mysql.host'),
+                Config::get('mysql.username'),
                 '');
         } catch (PDOException $exception){
             die($exception->getMessage());
