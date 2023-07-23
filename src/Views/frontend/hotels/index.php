@@ -8,7 +8,7 @@
     <title>Hotels</title>
 </head>
 <body>
-data
+
 <?php var_dump($data);?>
 </body>
 </html>

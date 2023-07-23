@@ -2,6 +2,8 @@
 
 namespace App\Entities\Core;
 
+use Iterator;
+
 abstract class EntityCore
 {
 
@@ -10,6 +12,11 @@ abstract class EntityCore
     public function getId() : int
     {
         return $this->id;
+    }
+
+    public function all()
+    {
+        return 'all from core';
     }
 
 }

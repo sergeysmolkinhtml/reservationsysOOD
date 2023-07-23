@@ -11,4 +11,6 @@ interface HotelRepositoryInterface
     public function create(array $attributes);
 
     public function destroy($id);
+
+    public function update($id, array $input);
 }

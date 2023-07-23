@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Services\HotelService;
 use League\Plates\Engine;
 
@@ -15,7 +16,7 @@ final class HotelController
 
     public function index() : void
     {
-        $data = $this->hotelService->data;
-        echo $this->templateEngine->render('hotels/index', ['data' => $data]);
+        $data = $this->hotelService->indexData();
+        echo $this->templateEngine->render('hotels/index',['data' => $data]);
     }
 }

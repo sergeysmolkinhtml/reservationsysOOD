@@ -1,16 +1,18 @@
 <?php
 
+use App\Config;
 use DI\Container;
 use App\Http\Controllers\HotelController;
 use App\Services\HotelService;
 use DI\ContainerBuilder;
 use App\Repositories\HotelRepository;
 use App\Repositories\Interfaces\HotelRepositoryInterface;
+use \League\Plates\Engine;
 
 require_once '../vendor/autoload.php';
-use \League\Plates\Engine;
-$containerBuilder = new ContainerBuilder();
 
+
+$containerBuilder = new ContainerBuilder();
 $containerBuilder->useAutowiring(true);
 $containerBuilder->useAttributes(true);
 
