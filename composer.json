@@ -16,6 +16,8 @@
     "php-di/php-di": "^7.0",
     "league/plates": "^3.5",
     "aura/sqlquery": "^3.0",
-    "monolog/monolog": "^3.4"
+    "monolog/monolog": "^3.4",
+    "guzzlehttp/guzzle": "^7.7",
+    "ext-http": "*"
   }
 }

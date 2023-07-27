@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Database;
+namespace App\Modules;
 
 use App\Config;
 use PDO;
@@ -17,11 +17,15 @@ final class MySQLDatabase extends DatabaseCore
             parent::$connection = new PDO('mysql:host=reserv;dbname=reservDB',
                 Config::get('mysql.username'),
                 '');
-        } catch (PDOException $exception){
+        } catch (PDOException $exception) {
             die($exception->getMessage());
         }
     }
 
+    public function query($statement, array $params = [])
+    {
+
+    }
 
 
 }

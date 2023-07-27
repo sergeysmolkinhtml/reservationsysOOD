@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Database\MySQLDatabase;
+use App\Modules\MySQLDatabase;
 use App\Entities\Hotel;
 use App\Repositories\Interfaces\HotelRepositoryInterface;
 use Aura\SqlQuery\QueryFactory;
@@ -69,5 +69,10 @@ final class HotelRepository implements HotelRepositoryInterface
     public function update($id, array $input)
     {
         // TODO: Implement update() method.
+    }
+
+    public function getReviews()
+    {
+        return 10;
     }
 }

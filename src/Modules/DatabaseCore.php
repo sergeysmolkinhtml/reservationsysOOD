@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Database;
+namespace App\Modules;
 
 use App\Contracts\DatabaseInterface;
 use PDO;
@@ -14,7 +14,7 @@ abstract class DatabaseCore implements DatabaseInterface
     public static function getInstance() : ?PDO
     {
         if(self::$connection === null) {
-            self::$connection === new static(); #TODo
+            self::$connection === new static();
         }
         return self::$connection;
     }

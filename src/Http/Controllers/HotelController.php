@@ -3,20 +3,25 @@
 namespace App\Http\Controllers;
 
 
+use App\Repositories\AvailableHotelsRepository;
+use App\Repositories\Interfaces\AvailableHotelsRepositoryInterface;
 use App\Services\HotelService;
 use League\Plates\Engine;
 
-final readonly class HotelController
+final class HotelController extends HotelCoreController
 {
 
     public function __construct(
-        private Engine       $templateEngine,
-        private HotelService $hotelService
+        private readonly Engine       $templateEngine,
+        private readonly AvailableHotelsRepositoryInterface $hotelsRepository,
+        private readonly HotelService $hotelService
     ) {}
 
     public function index() : void
     {
-        $data = $this->hotelService->indexData();
-        echo $this->templateEngine->render('hotels/index',['data' => $data]);
+        $this->hotels = $this->hotelsRepository->availableHotels('32.3.2003');
+        $result = $this->hotelService->indexData($this->data);
+        $this->data += $this->hotels + $result;
+        echo $this->templateEngine->render('hotels/index',['hotels' => $this->data[0]]);
     }
 }

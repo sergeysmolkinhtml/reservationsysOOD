@@ -7,6 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
 {
     public static $files = array (
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
     );
@@ -15,6 +18,8 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
             'Psr\\Container\\' => 14,
         ),
         'M' => 
@@ -29,6 +34,12 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'I' => 
         array (
             'Invoker\\' => 8,
+        ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
         ),
         'F' => 
         array (
@@ -50,6 +61,15 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
@@ -69,6 +89,18 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'Invoker\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/invoker/src',
+        ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'FastRoute\\' => 
         array (
@@ -92,11 +124,12 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'App\\Config' => __DIR__ . '/../..' . '/config/Config.php',
         'App\\Contracts\\BaseInterface' => __DIR__ . '/../..' . '/src/Contracts/BaseInterface.php',
         'App\\Contracts\\DatabaseInterface' => __DIR__ . '/../..' . '/src/Contracts/DatabaseInterface.php',
-        'App\\DTO\\BookingDTO' => __DIR__ . '/../..' . '/src/DTO/BookingDTO.php',
-        'App\\Database\\DatabaseCore' => __DIR__ . '/../..' . '/src/Database/DatabaseCore.php',
-        'App\\Database\\MySQLDatabase' => __DIR__ . '/../..' . '/src/Database/MySQLDatabase.php',
+        'App\\DTO\\AvailableHotelDTO' => __DIR__ . '/../..' . '/src/DTO/AvailableHotelDTO.php',
+        'App\\Database\\DatabaseCore' => __DIR__ . '/../..' . '/src/Modules/DatabaseCore.php',
+        'App\\Database\\MySQLDatabase' => __DIR__ . '/../..' . '/src/Modules/MySQLDatabase.php',
         'App\\Entities\\Amenity' => __DIR__ . '/../..' . '/src/Entities/Amenity.php',
         'App\\Entities\\BookingStatus' => __DIR__ . '/../..' . '/src/Entities/BookingStatus.php',
+        'App\\Entities\\Client' => __DIR__ . '/../..' . '/src/Entities/Client.php',
         'App\\Entities\\Core\\EntityCore' => __DIR__ . '/../..' . '/src/Entities/Core/EntityCore.php',
         'App\\Entities\\Discount' => __DIR__ . '/../..' . '/src/Entities/Discount.php',
         'App\\Entities\\Hotel' => __DIR__ . '/../..' . '/src/Entities/Hotel.php',
@@ -109,9 +142,13 @@ class ComposerStaticInit1358a865ab5286eece9831de2f91c94a
         'App\\Entities\\RoomType' => __DIR__ . '/../..' . '/src/Entities/RoomType.php',
         'App\\Entities\\User' => __DIR__ . '/../..' . '/src/Entities/User.php',
         'App\\Http\\Controllers\\HotelController' => __DIR__ . '/../..' . '/src/Http/Controllers/HotelController.php',
+        'App\\Http\\Controllers\\HotelCoreController' => __DIR__ . '/../..' . '/src/Http/Controllers/HotelCoreController.php',
+        'App\\Repositories\\AvailableHotelsRepository' => __DIR__ . '/../..' . '/src/Repositories/AvailableHotelsRepository.php',
         'App\\Repositories\\HotelRepository' => __DIR__ . '/../..' . '/src/Repositories/HotelRepository.php',
+        'App\\Repositories\\Interfaces\\AvailableHotelsRepositoryInterface' => __DIR__ . '/../..' . '/src/Repositories/Interfaces/AvailableHotelsRepositoryInterface.php',
         'App\\Repositories\\Interfaces\\HotelRepositoryInterface' => __DIR__ . '/../..' . '/src/Repositories/Interfaces/HotelRepositoryInterface.php',
         'App\\Repositories\\Interfaces\\UserRepositoryInterface' => __DIR__ . '/../..' . '/src/Repositories/Interfaces/UserRepositoryInterface.php',
+        'App\\Repositories\\RepositoryCore' => __DIR__ . '/../..' . '/src/Repositories/RepositoryCore.php',
         'App\\Repositories\\UserRepository' => __DIR__ . '/../..' . '/src/Repositories/UserRepository.php',
         'App\\Services\\HotelService' => __DIR__ . '/../..' . '/src/Services/HotelService.php',
         'App\\Services\\ServiceCore' => __DIR__ . '/../..' . '/src/Services/ServiceCore.php',

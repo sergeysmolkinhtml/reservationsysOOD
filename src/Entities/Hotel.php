@@ -2,11 +2,7 @@
 
 namespace App\Entities;
 
-use App\Database\MySQLDatabase;
 use App\Entities\Core\EntityCore;
-use Monolog\Level;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 
 final class Hotel extends EntityCore
 {
@@ -14,6 +10,10 @@ final class Hotel extends EntityCore
     public string $address;
     public string $rating;
 
+    public string $type;
+    private array $reviews;
+
+    public const MAX_AVAILABLE_ROOMS = 10; // config: app.max.rooms -> db event
     public static string $configStatusNameHotelNotWorking = 'Not working';
     public static string $configStatusNameHotelWorking = 'Working';
 
@@ -29,11 +29,21 @@ final class Hotel extends EntityCore
         parent::__construct($id);
     }
 
+
     public static function getUserTable() : string
     {
         return self::TABLE;
     }
 
+    public function addReview(Review $review): void
+    {
+        $this->reviews[] = $review;
+    }
+
+    public function getReviews(): array
+    {
+        return $this->reviews;
+    }
     /**
      * @return String
      */
@@ -82,12 +92,26 @@ final class Hotel extends EntityCore
         $this->rating = $rating;
     }
 
-    public static function log() : void
+    private function setType(string $type) : void
     {
-        $log = new Logger('name');
+        $this->type = $type;
     }
 
+    public static function fromInt(int $price) : Hotel
+    {
+        $object = new Hotel();
 
+        $type = match ($price) {
+           100 <=> 500  => 'Type of hotel 1',
+           200 <=> 1000 => 'Type of hotel 2',
+           300 <=> 2000 => 'Type of hotel 3',
+           default      => 'Not enough money'
+        };
+
+        $object->setType($type);
+
+        return $object;
+    }
 
 
 

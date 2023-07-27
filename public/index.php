@@ -1,16 +1,17 @@
 <?php
 
-use App\Config;
-use DI\Container;
 use App\Http\Controllers\HotelController;
-use App\Services\HotelService;
-use DI\ContainerBuilder;
 use App\Repositories\HotelRepository;
 use App\Repositories\Interfaces\HotelRepositoryInterface;
-use \League\Plates\Engine;
-use \Aura\SqlQuery\QueryFactory;
+use App\Services\HotelService;
+use Aura\SqlQuery\QueryFactory;
+use DI\Container;
+use DI\ContainerBuilder;
+use League\Plates\Engine;
+use App\Repositories\Interfaces\AvailableHotelsRepositoryInterface;
 
 require_once '../vendor/autoload.php';
+
 
 
 $containerBuilder = new ContainerBuilder();
@@ -32,9 +33,13 @@ $containerBuilder->addDefinitions([
             $container->get(HotelRepositoryInterface::class)
         );
     },
+    AvailableHotelsRepositoryInterface::class => function(Container $container) {
+        return new \App\Repositories\AvailableHotelsRepository();
+    },
     HotelController::class => function (Container $container) {
         return new HotelController(
             $container->get(Engine::class),
+            $container->get(AvailableHotelsRepositoryInterface::class),
             $container->get(HotelService::class)
         );
     }
