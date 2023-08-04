@@ -9,8 +9,8 @@
 </head>
 <body>
 
-<?php foreach ($hotels as $key => $hotel):?>
-<?php echo $hotel['name']?>
-<?php endforeach;?>
+
+<?php var_dump($weather);?>
+
 </body>
 </html>

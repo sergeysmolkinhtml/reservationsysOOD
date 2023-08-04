@@ -11,7 +11,6 @@ abstract class EntityCore
     public array $data = [];
 
     public function __construct(
-        private readonly ?Int $id = null,
     ) { }
 
     public function getId() : int

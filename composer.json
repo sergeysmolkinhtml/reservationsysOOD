@@ -11,6 +11,7 @@
   },
 
   "require": {
+    "php" : "8.2.*",
     "ext-pdo": "*",
     "nikic/fast-route": "^1.3",
     "php-di/php-di": "^7.0",
@@ -18,6 +19,12 @@
     "aura/sqlquery": "^3.0",
     "monolog/monolog": "^3.4",
     "guzzlehttp/guzzle": "^7.7",
-    "ext-http": "*"
+    "ext-http": "*",
+    "ext-curl": "*",
+    "doctrine/orm": "^2.15",
+    "doctrine/dbal": "^3.2",
+    "symfony/yaml": "^5.4",
+    "symfony/cache": "^5.4",
+    "vlucas/phpdotenv" : "*"
   }
 }

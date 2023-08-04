@@ -30,7 +30,8 @@ $containerBuilder->addDefinitions([
     },
     HotelService::class => function (Container $container) {
         return new HotelService(
-            $container->get(HotelRepositoryInterface::class)
+            $container->get(HotelRepositoryInterface::class),
+            new \App\Modules\EventDispatcher()
         );
     },
     AvailableHotelsRepositoryInterface::class => function(Container $container) {
@@ -51,6 +52,7 @@ $container = $containerBuilder->build();
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/hotels',['App\Http\Controllers\HotelController', 'index']);
+    $r->addRoute('GET', '/hotels/city/weather/{id:\d+}',['App\Http\Controllers\HotelController', 'index']);
 });
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];

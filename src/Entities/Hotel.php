@@ -3,11 +3,30 @@
 namespace App\Entities;
 
 use App\Entities\Core\EntityCore;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="hotels")
+ */
 final class Hotel extends EntityCore
 {
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
+     */
+    private int $id;
+    /**
+     * @ORM\Column(type="string")
+     */
     public string $title;
+    /**
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="hotel")
+     */
+    private $clients;
     public string $address;
+
     public string $rating;
 
     public string $type;

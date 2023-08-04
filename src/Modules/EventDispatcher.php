@@ -2,7 +2,7 @@
 
 namespace App\Modules;
 
-use App\Common\EventDispatcherInterface;
+use App\Concerns\EventDispatcherInterface;
 
 final class EventDispatcher implements EventDispatcherInterface
 {

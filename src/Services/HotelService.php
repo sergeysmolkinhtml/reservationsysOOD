@@ -15,14 +15,15 @@ final class HotelService extends ServiceCore
 
     public function __construct(
         private readonly HotelRepositoryInterface $hotelRepository,
-        private EventDispatcher $dispatcher
+        private readonly EventDispatcher $dispatcher
     ) {}
 
     public function indexData($data) : array
     {
         $this->data = $data;
         $this->hotels = $this->hotelRepository->all();
-        $this->hotel_rating = $this->getHotelRating($this->hotels[0]['id']);
+        //$this->hotel_rating = $this->getHotelRating($this->hotels[0]['id']);
+        $this->weather = (new WeatherService())->getByCityId(1135625);
         return $this->data;
     }
 
